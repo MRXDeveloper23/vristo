@@ -48,7 +48,7 @@ const DefaultLayout = ({ children }: PropsWithChildren) => {
     return (
         <App>
             {/* BEGIN MAIN CONTAINER */}
-            <div className="relative">
+            <div className="relative bg-[#F1F5F8]">
                 {/* sidebar menu overlay */}
                 <div className={`${(!themeConfig.sidebar && 'hidden') || ''} fixed inset-0 bg-[black]/60 z-50 lg:hidden`} onClick={() => dispatch(toggleSidebar())}></div>
                 {/* screen loader */}
@@ -78,26 +78,24 @@ const DefaultLayout = ({ children }: PropsWithChildren) => {
                 <Setting />
                 {/* END APP SETTING LAUNCHER */}
 
-                <div className={`${themeConfig.navbar} main-container text-black dark:text-white-dark min-h-screen`}>
+                <div className={`${themeConfig.navbar} main-container bg-[#071A50] text-black dark:text-white-dark min-h-screen`}>
                     {/* BEGIN SIDEBAR */}
                     <Sidebar />
                     {/* END SIDEBAR */}
 
-                    <div className="main-content flex flex-col min-h-screen">
+                    <div className="main-content flex flex-col min-h-screen ">
                         {/* BEGIN TOP NAVBAR */}
-                        <Header />
                         {/* END TOP NAVBAR */}
-
                         {/* BEGIN CONTENT AREA */}
                         <Suspense>
-                            <div className={`${themeConfig.animation} p-6 animate__animated`}>{children}</div>
+                            <Header />
+                            <div className={`${themeConfig.animation} animate__animated bg-[#F1F5F8] p-6`}>{children}</div>
                         </Suspense>
                         {/* END CONTENT AREA */}
-
                         {/* BEGIN FOOTER */}
-                        <Footer />
+                        {/* <Footer /> */}
                         {/* END FOOTER */}
-                        <Portals />
+                        {/* <Portals /> */}
                     </div>
                 </div>
             </div>

@@ -11,6 +11,8 @@ const Chat = lazy(() => import('../pages/Apps/Chat'));
 const Scrumboard = lazy(() => import('../pages/Apps/Scrumboard'));
 const Calendar = lazy(() => import('../pages/Apps/Calendar'));
 const List = lazy(() => import('../pages/Apps/Invoice/List'));
+const Employees = lazy(() => import('../pages/Apps/Invoice/Employees'));
+const Salaries = lazy(() => import('../pages/Apps/Invoice/Salaries'));
 const Preview = lazy(() => import('../pages/Apps/Invoice/Preview'));
 const Add = lazy(() => import('../pages/Apps/Invoice/Add'));
 const Edit = lazy(() => import('../pages/Apps/Invoice/Edit'));
@@ -106,6 +108,10 @@ const routes = [
         path: '/',
         element: <Index />,
     },
+    {
+        path: '/statistics',
+        element: <Index />,
+    },
     // {
     //     path: '/index',
     //     element: <Index />,
@@ -142,8 +148,12 @@ const routes = [
         element: <Mailbox />,
     },
     {
-        path: '/apps/invoice/list',
-        element: <List />,
+        path: '/employees',
+        element: <Employees />,
+    },
+    {
+        path: '/salaries',
+        element: <Salaries />,
     },
     // Apps page
     {
@@ -152,6 +162,22 @@ const routes = [
     },
     {
         path: '/apps/scrumboard',
+        element: <Scrumboard />,
+    },
+    {
+        path: '/expenses',
+        element: <Scrumboard />,
+    },
+    {
+        path: '/production32',
+        element: <Scrumboard />,
+    },
+    {
+        path: '/warehouse32',
+        element: <Scrumboard />,
+    },
+    {
+        path: '/sales-department',
         element: <Scrumboard />,
     },
     {
@@ -168,7 +194,7 @@ const routes = [
         element: <Add />,
     },
     {
-        path: '/apps/invoice/edit',
+        path: '/warehouse',
         element: <Edit />,
     },
     // components page
@@ -225,7 +251,7 @@ const routes = [
         element: <PricingTable />,
     },
     {
-        path: '/components/lightbox',
+        path: '/production',
         element: <LightBox />,
     },
     // elements page
@@ -374,7 +400,7 @@ const routes = [
     },
     // Users page
     {
-        path: '/users/profile',
+        path: '/settings',
         element: <Profile />,
     },
     {
