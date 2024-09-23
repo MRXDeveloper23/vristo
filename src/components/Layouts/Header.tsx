@@ -32,6 +32,8 @@ import IconMenuDatatables from '../Icon/Menu/IconMenuDatatables';
 import IconMenuForms from '../Icon/Menu/IconMenuForms';
 import IconMenuPages from '../Icon/Menu/IconMenuPages';
 import IconMenuMore from '../Icon/Menu/IconMenuMore';
+import { signOut } from '../../store/authSlice';
+import Swal from 'sweetalert2';
 
 const Header = () => {
     const location = useLocation();
@@ -456,10 +458,26 @@ const Header = () => {
                                         </Link>
                                     </li>
                                     <li className="border-t border-white-light dark:border-white-light/10">
-                                        <Link to="/auth/boxed-signin" className="text-danger !py-3">
+                                        <button
+                                            onClick={() => {
+                                                dispatch(signOut());
+                                                const toast = Swal.mixin({
+                                                    toast: true,
+                                                    position: 'top-end',
+                                                    showConfirmButton: false,
+                                                    timer: 3000,
+                                                });
+                                                toast.fire({
+                                                    icon: 'success',
+                                                    title: 'Signed out successfully',
+                                                    padding: '10px 20px',
+                                                });
+                                            }}
+                                            className="text-danger !py-3"
+                                        >
                                             <IconLogout className="w-4.5 h-4.5 ltr:mr-2 rtl:ml-2 rotate-90 shrink-0" />
                                             Sign Out
-                                        </Link>
+                                        </button>
                                     </li>
                                 </ul>
                             </Dropdown>
