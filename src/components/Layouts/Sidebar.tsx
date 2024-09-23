@@ -90,7 +90,7 @@ const Sidebar = () => {
                     <div className="flex justify-between items-top px-4 py-3">
                         <NavLink to="/" className="main-logo flex flex-col gap-3 shrink-0 flex-1 items-center justify-center mt-4">
                             <img className="w-14 ml-[5px] flex-none" src="/assets/images/logo.svg" alt="logo" />
-                            <span className="text-2xl ltr:ml-1.5 rtl:mr-1.5 font-semibold text-white align-middle lg:inline dark:text-white-light">{t('VRISTO')}</span>
+                            <span className="text-2xl font-bold text-md ltr:ml-1.5 rtl:mr-1.5 font-semibold text-white align-middle lg:inline dark:text-white-light">{t('VRISTO')}</span>
                         </NavLink>
 
                         <button
@@ -143,65 +143,69 @@ const Sidebar = () => {
                                 <ul>
                                     <li className="nav-item">
                                         <NavLink to="/employees" className="group">
-                                            <div className="w-full flex items-center justify-start ml-10">
+                                            <div className="font-bold text-md w-full flex items-center justify-start ml-10">
                                                 <IoIosPeople className="group-hover:!text-primary  shrink-0 !text-white" />
-                                                <span className="ltr:pl-3 rtl:pr-3 text-white dark:text-[#506690] dark:group-hover:text-white-dark">{t('Xodimlar')}</span>
+                                                <span className="group-hover:!text-primary ltr:pl-3 rtl:pr-3 text-white dark:text-[#506690] dark:group-hover:text-white-dark">{t('Xodimlar')}</span>
                                             </div>
                                         </NavLink>
                                     </li>
                                     <li className="nav-item">
                                         <NavLink to="/statistics" className="group">
-                                            <div className="w-full flex items-center justify-start ml-10">
+                                            <div className="font-bold text-md w-full flex items-center justify-start ml-10">
                                                 <ImStatsDots className="group-hover:!text-primary  shrink-0 !text-white" />
-                                                <span className="ltr:pl-3 rtl:pr-3 text-white dark:text-[#506690] dark:group-hover:text-white-dark">{t('Statistika')}</span>
+                                                <span className="group-hover:!text-primary ltr:pl-3 rtl:pr-3 text-white dark:text-[#506690] dark:group-hover:text-white-dark">{t('Statistika')}</span>
                                             </div>
                                         </NavLink>
                                     </li>
                                     <li className="nav-item">
                                         <NavLink to="/expenses" className="group">
-                                            <div className="w-full flex items-center justify-start ml-10">
+                                            <div className="font-bold text-md w-full flex items-center justify-start ml-10">
                                                 <IoStatsChart className="group-hover:!text-primary  shrink-0 !text-white" />
-                                                <span className="ltr:pl-3 rtl:pr-3 text-white dark:text-[#506690] dark:group-hover:text-white-dark">{t('Rasxodlar')}</span>
+                                                <span className="group-hover:!text-primary ltr:pl-3 rtl:pr-3 text-white dark:text-[#506690] dark:group-hover:text-white-dark">{t('Rasxodlar')}</span>
                                             </div>
                                         </NavLink>
                                     </li>
                                     <li className="nav-item">
                                         <NavLink to="/salaries" className="group">
-                                            <div className="w-full flex items-center justify-start ml-10">
+                                            <div className="font-bold text-md w-full flex items-center justify-start ml-10">
                                                 <LuDollarSign className="group-hover:!text-primary  shrink-0 !text-white" />
-                                                <span className="ltr:pl-3 rtl:pr-3 text-white dark:text-[#506690] dark:group-hover:text-white-dark">{t('Oyliklar')}</span>
+                                                <span className="group-hover:!text-primary ltr:pl-3 rtl:pr-3 text-white dark:text-[#506690] dark:group-hover:text-white-dark">{t('Oyliklar')}</span>
                                             </div>
                                         </NavLink>
                                     </li>
                                     <li className="nav-item">
                                         <NavLink to="/sales-department" className="group">
-                                            <div className="w-full flex items-center justify-start ml-10">
+                                            <div className="w-full flex items-center justify-start ml-10 font-bold text-md">
                                                 <IoPeople className="group-hover:!text-primary  shrink-0 !text-white" />
-                                                <span className="ltr:pl-3 rtl:pr-3 text-white dark:text-[#506690] dark:group-hover:text-white-dark">{t("Sotuv bo'limi")}</span>
+                                                <span className="group-hover:!text-primary ltr:pl-3 rtl:pr-3 text-white dark:text-[#506690] dark:group-hover:text-white-dark">
+                                                    {t("Sotuv bo'limi")}
+                                                </span>
                                             </div>
                                         </NavLink>
                                     </li>
                                     <li className="nav-item">
                                         <NavLink to="/production" className="group">
-                                            <div className="w-full flex items-center justify-start ml-10">
+                                            <div className="font-bold text-md w-full flex items-center justify-start ml-10">
                                                 <LuBox className="group-hover:!text-primary  shrink-0 !text-white" />
-                                                <span className="ltr:pl-3 rtl:pr-3 text-white dark:text-[#506690] dark:group-hover:text-white-dark">{t('Ishlab chiqarish')}</span>
+                                                <span className="group-hover:!text-primary ltr:pl-3 rtl:pr-3 text-white dark:text-[#506690] dark:group-hover:text-white-dark">
+                                                    {t('Ishlab chiqarish')}
+                                                </span>
                                             </div>
                                         </NavLink>
                                     </li>
                                     <li className="nav-item">
                                         <NavLink to="/warehouse" className="group">
-                                            <div className="w-full flex items-center justify-start ml-10">
+                                            <div className="font-bold text-md w-full flex items-center justify-start ml-10">
                                                 <CgScreenMirror className="group-hover:!text-primary  shrink-0 !text-white" />
-                                                <span className="ltr:pl-3 rtl:pr-3 text-white dark:text-[#506690] dark:group-hover:text-white-dark">{t('Ombor')}</span>
+                                                <span className="group-hover:!text-primary ltr:pl-3 rtl:pr-3 text-white dark:text-[#506690] dark:group-hover:text-white-dark">{t('Ombor')}</span>
                                             </div>
                                         </NavLink>
                                     </li>
                                     <li className="nav-item">
                                         <NavLink to="/settings" className="group">
-                                            <div className="w-full flex items-center justify-start ml-10">
+                                            <div className="font-bold text-md w-full flex items-center justify-start ml-10">
                                                 <RiSettings5Fill className="group-hover:!text-primary  shrink-0 !text-white" />
-                                                <span className="ltr:pl-3 rtl:pr-3 text-white dark:text-[#506690] dark:group-hover:text-white-dark">{t('Настройки')}</span>
+                                                <span className="group-hover:!text-primary ltr:pl-3 rtl:pr-3 text-white dark:text-[#506690] dark:group-hover:text-white-dark">{t('Настройки')}</span>
                                             </div>
                                         </NavLink>
                                     </li>
