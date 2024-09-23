@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import ReactDOM from 'react-dom/client'
+import ReactDOM from 'react-dom/client';
 
 // Perfect Scrollbar
 import 'react-perfect-scrollbar/dist/css/styles.css';
@@ -12,20 +12,31 @@ import './i18n';
 
 // Router
 import { RouterProvider } from 'react-router-dom';
-import router from './router/index';
+// import router from './router/index';
+import { getRoutes } from './router';
 
 // Redux
 import { Provider } from 'react-redux';
 import store from './store/index';
 
+import { useSelector } from 'react-redux';
+import { IRootState } from './store';
+
+const ProtectedRoutes = () => {
+    const { token } = useSelector((s: IRootState) => s.auth);
+    return (
+        <>
+            <RouterProvider router={getRoutes(token != null)} />
+        </>
+    );
+};
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <React.StrictMode>
         <Suspense>
             <Provider store={store}>
-                <RouterProvider router={router} />
+                <ProtectedRoutes />
             </Provider>
         </Suspense>
     </React.StrictMode>
 );
-

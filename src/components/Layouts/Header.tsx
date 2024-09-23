@@ -32,6 +32,8 @@ import IconMenuDatatables from '../Icon/Menu/IconMenuDatatables';
 import IconMenuForms from '../Icon/Menu/IconMenuForms';
 import IconMenuPages from '../Icon/Menu/IconMenuPages';
 import IconMenuMore from '../Icon/Menu/IconMenuMore';
+import { signOut } from '../../store/authSlice';
+import Swal from 'sweetalert2';
 
 const Header = () => {
     const location = useLocation();
@@ -158,7 +160,7 @@ const Header = () => {
                         </button>
                     </div>
 
-                    <div className="ltr:mr-2 rtl:ml-2 hidden sm:block">
+                    {/* <div className="ltr:mr-2 rtl:ml-2 hidden sm:block">
                         <ul className="flex items-center space-x-2 rtl:space-x-reverse dark:text-[#d0d2d6]">
                             <li>
                                 <Link to="/apps/calendar" className="block p-2 rounded-full bg-white-light/40 dark:bg-dark/40 hover:text-primary hover:bg-white-light/90 dark:hover:bg-dark/60">
@@ -176,9 +178,9 @@ const Header = () => {
                                 </Link>
                             </li>
                         </ul>
-                    </div>
+                    </div> */}
                     <div className="sm:flex-1 ltr:sm:ml-0 ltr:ml-auto sm:rtl:mr-0 rtl:mr-auto flex items-center space-x-1.5 lg:space-x-2 rtl:space-x-reverse dark:text-[#d0d2d6]">
-                        <div className="sm:ltr:mr-auto sm:rtl:ml-auto">
+                        {/* <div className="sm:ltr:mr-auto sm:rtl:ml-auto">
                             <form
                                 className={`${search && '!block'} sm:relative absolute inset-x-0 sm:top-0 top-1/2 sm:translate-y-0 -translate-y-1/2 sm:mx-0 mx-4 z-10 sm:block hidden`}
                                 onSubmit={() => setSearch(false)}
@@ -204,7 +206,8 @@ const Header = () => {
                             >
                                 <IconSearch className="w-4.5 h-4.5 mx-auto dark:text-[#d0d2d6]" />
                             </button>
-                        </div>
+                        </div> */}
+                        <div className="flex-1"></div>
                         <div>
                             {themeConfig.theme === 'light' ? (
                                 <button
@@ -277,7 +280,7 @@ const Header = () => {
                                 </ul>
                             </Dropdown>
                         </div>
-                        <div className="dropdown shrink-0">
+                        {/* <div className="dropdown shrink-0">
                             <Dropdown
                                 offset={[0, 8]}
                                 placement={`${isRtl ? 'bottom-start' : 'bottom-end'}`}
@@ -339,7 +342,7 @@ const Header = () => {
                                     )}
                                 </ul>
                             </Dropdown>
-                        </div>
+                        </div> */}
                         <div className="dropdown shrink-0">
                             <Dropdown
                                 offset={[0, 8]}
@@ -455,10 +458,26 @@ const Header = () => {
                                         </Link>
                                     </li>
                                     <li className="border-t border-white-light dark:border-white-light/10">
-                                        <Link to="/auth/boxed-signin" className="text-danger !py-3">
+                                        <button
+                                            onClick={() => {
+                                                dispatch(signOut());
+                                                const toast = Swal.mixin({
+                                                    toast: true,
+                                                    position: 'top-end',
+                                                    showConfirmButton: false,
+                                                    timer: 3000,
+                                                });
+                                                toast.fire({
+                                                    icon: 'success',
+                                                    title: 'Signed out successfully',
+                                                    padding: '10px 20px',
+                                                });
+                                            }}
+                                            className="text-danger !py-3"
+                                        >
                                             <IconLogout className="w-4.5 h-4.5 ltr:mr-2 rtl:ml-2 rotate-90 shrink-0" />
                                             Sign Out
-                                        </Link>
+                                        </button>
                                     </li>
                                 </ul>
                             </Dropdown>

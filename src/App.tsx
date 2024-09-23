@@ -23,7 +23,7 @@ function App({ children }: PropsWithChildren) {
         <div
             className={`${(store.getState().themeConfig.sidebar && 'toggle-sidebar') || ''} ${themeConfig.menu} ${themeConfig.layout} ${
                 themeConfig.rtlClass
-            } main-section antialiased relative font-nunito text-sm font-normal`}
+            } main-section z-40 antialiased font-nunito text-sm font-normal fixed top-0 bottom-0 mt-6 mx-6 mb-6 rounded-2xl left-0 right-0 overflow-y-auto overflow-x-hidden bg-[#203674]`}
         >
             {children}
         </div>
@@ -31,3 +31,7 @@ function App({ children }: PropsWithChildren) {
 }
 
 export default App;
+
+{
+    /* <div className="fixed top-0 bottom-0 left-0 right-0 m-[10px] overflow-y-auto overflow-x-hidden border-2 border-gray-400"> */
+}
